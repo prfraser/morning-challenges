@@ -19,4 +19,6 @@ def palindrome (string)
   # Your code here
   compare = string
   string.reverse.eql? compare
+  # OR
+  # string = string.reverse
 end
