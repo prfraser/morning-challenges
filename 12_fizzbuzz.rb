@@ -40,10 +40,11 @@
 # 	end
 # end
 
+puts (1..100).map{|n| n%15==0 ? 'fizzbuzz' : n%3==0 ? 'fizz' : n%5==0 ? 'buzz' : n}
 
 # fizzbuzz
-(1..100).each do |x|
-  fizz = "Fizz" if (x % 3 == 0)
-  buzz = "Buzz" if (x % 5 == 0)
-  puts (fizz || buzz) ? fizz.to_s + buzz.to_s : x
-end
+# (1..100).each do |x|
+#   fizz = "Fizz" if (x % 3 == 0)
+#   buzz = "Buzz" if (x % 5 == 0)
+#   puts (fizz || buzz) ? fizz.to_s + buzz.to_s : x
+# end
