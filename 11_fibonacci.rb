@@ -25,6 +25,7 @@
 
 def nthFibonacci (n)
   # Your code here    
+<<<<<<< HEAD
   $fib = [0, 1]
   num1 = 0
   num2 = 1
@@ -37,4 +38,6 @@ def nthFibonacci (n)
 
 	$fib[n]
 
+=======
+>>>>>>> 4493d526998bd9254fbdf329a6db4c41b64517bf
 end
