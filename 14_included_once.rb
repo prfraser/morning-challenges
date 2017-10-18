@@ -20,6 +20,7 @@
 
 def includedOnce (haystack, needle)
   # Your code here
+<<<<<<< HEAD
   result = []
 
   haystack.each do |word|
@@ -38,3 +39,6 @@ end
 includedOnce(['hello','hi','hi'], 'hi')
 includedOnce(['hello','hi','hey'], 'hi')
 includedOnce(['hello','hey','hey'], 'hi')
+=======
+end
+>>>>>>> b14b2af2732bbb5058faa79d210d75318c923e9f
