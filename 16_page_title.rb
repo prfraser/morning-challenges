@@ -1,0 +1,25 @@
+#
+# Page Title
+#
+# Write a method that takes a URL and
+# returns the website's title.
+#
+# Examples:
+# pageTitle("http://google.com") => "Google"
+# pageTitle("http://www.reddit.com") => "reddit: the front page of the internet"
+#
+# Check your answers by running the tests:
+# ruby tests/16_page_title_test.rb
+#
+# require 'open-uri'
+require 'metainspector'
+
+def pageTitle(url)
+  # your code here
+	# source = open(url).read
+	page = MetaInspector.new(url)
+	page.title
+end
+
+# puts pageTitle("http://google.com")
+# puts pageTitle("http://www.reddit.com")
