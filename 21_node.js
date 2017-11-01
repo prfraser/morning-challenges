@@ -29,8 +29,11 @@ const requestHandler = (request, response) => {
 
   if (request.url === '/hello') {
     response.end('world')
+<<<<<<< HEAD
   } else if (request.url === '/') {
     response.end('<h1>root page </h1>')
+=======
+>>>>>>> 837c4ad7c9468551ddc45961a1ee84ef084f7365
   }
 
   response.end('Not found!!')
