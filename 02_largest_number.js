@@ -10,7 +10,7 @@
 // # largest_number(100,50) should return 100
 // # largest_number(10,20) should return 20
 
-const largest_number = (a, b) => { a > b ? return a : return b }
+const largest_number = (a, b) => { a > b ? console.log(a) : console.log(b) }
 
-console.log(largest_number(100,50));
-console.log(largest_number(10,20));
+largest_number(100,50);
+largest_number(10,20);
