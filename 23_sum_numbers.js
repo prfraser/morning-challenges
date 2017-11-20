@@ -16,12 +16,16 @@
 */
 
 sumNumbers = (numbers) => {
+<<<<<<< HEAD
   // function for adding two numbers. Easy!
   const add = (a, b) =>
     a + b
   // use reduce to sum our array
   const sum = numbers.reduce(add)
   return sum
+=======
+  
+>>>>>>> 11f38168fbc9654480b106fdb81ed0504cb7b261
 }
   
 // Don't remove this line, the tests need it
