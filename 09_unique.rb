@@ -19,7 +19,6 @@
 #
 
 def unique (mylist)
-<<<<<<< HEAD
 	result = []
   mylist.each do |item|
   	unless result.include?(item)
@@ -27,7 +26,4 @@ def unique (mylist)
   	end
   end
 	result
-=======
-  # Your code here
->>>>>>> 82db40b16a451a7c8d5d0b9965097324ab467c97
 end
