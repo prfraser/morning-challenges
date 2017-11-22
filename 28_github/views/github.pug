@@ -1,0 +1,14 @@
+html
+	head
+		title Pretty GitHub
+	body
+		p Viewing information about #{githubDetails.login}
+		img(src=githubDetails.avatar_url)
+		ul
+			li Bio: #{githubDetails.bio}
+			li URL: #{githubDetails.html_url}
+			li Location: #{githubDetails.location}
+		p Repos:
+		ul
+		each repo in repoDetails
+			li= repo.name
