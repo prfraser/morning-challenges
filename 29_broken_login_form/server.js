@@ -21,22 +21,49 @@
   6. Store the users in mongo instead on this file.
 */
 
+// Sessions
+//
+// Carry on from challenge #29 (broken login form)
+//
+// Challenge:
+// 1. Implement https://github.com/expressjs/session
+// 2. When a use logs in, store their email in the session.
+//    Hint: use req.session - this is unique to each user.
+//    Hint: e.g. req.session.email = 'user@blah.ccom'
+//  
+// 3. Allow the user to GET /secure if they are logged in.
+//
+// Beast mode:
+// 1. Add a logout link which destroys their session.
+
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 let user = require('./models/user');
+const session = require('express-session')
 
 // Allow access to everything in /public.
 // This is for our stylesheets & images.
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+  secret: 'keyboard cat',
+  cookie: { }
+}))
 
 // Views #thepuglifechoseme
 app.set('view engine', 'pug')
 
 
 app.get("/", (req, res) => {
-  res.render('login');
+  console.log(req.session.email)
+  if(req.session.email) {
+    console.log(req.session.email, 'session found. redirected to secure')
+    res.render('secure');
+  } else {
+    res.render('login');
+  }
 });
 
 app.post("/secure", (req, res) => {
@@ -44,7 +71,9 @@ app.post("/secure", (req, res) => {
   let userPassword = req.body.password
   user.findOne({ 'email': userEmail }).then((result) => {
     console.log(result)
-    if(result && result.password === userPassword &&req.body.agree === 'on') {
+    if(result && result.password === userPassword && req.body.agree === 'on') {
+      req.session.email = userEmail
+      console.log(req.session.email)
       // userFound.attempts = 0
       res.render('secure');
     } else {
@@ -53,6 +82,14 @@ app.post("/secure", (req, res) => {
     }
   })
 });
+
+app.get('/logout', (req, res) => {
+  req.session.destroy(function(err) {
+    // cannot access session here
+    console.log(err)
+  });
+  res.render('login');
+})
 
 app.listen(3000);
 console.log("Lift off!");
