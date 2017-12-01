@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Tests here!
 var assert = require('assert');
 var removeDupes = require('../33_remove_dupes');
@@ -13,3 +14,6 @@ describe('Remove Dupes', function() {
     assert.deepEqual(['1','2','3', 1], removeDupes(['1','2','3', 1, '1']));
   });
 });
+=======
+// Tests here!
+>>>>>>> 8ba17f26e018640bf56bbe2c4e2bb18072d5228c

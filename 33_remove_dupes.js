@@ -23,6 +23,7 @@
 */
 
 
+<<<<<<< HEAD
 const removeDupes = (input) => {
   return input.reduce((res, val) => {
     if (!res.includes(val)) {
@@ -34,6 +35,11 @@ const removeDupes = (input) => {
 
 // console.log(removeDupes(['1','2','3']))
 // console.log(removeDupes(['a','b','1','1']))
+=======
+const removeDupes = (input) {
+
+}
+>>>>>>> 8ba17f26e018640bf56bbe2c4e2bb18072d5228c
 
 // Export removeDupes so we can test it!
 module.exports = removeDupes;
